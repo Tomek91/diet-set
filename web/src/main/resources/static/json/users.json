@@ -1,0 +1,48 @@
+[
+  {
+    "id": null,
+    "name": "ADMIN",
+    "surname": "ADMIN",
+    "userName": "aa",
+    "password": "aa",
+    "birthday": "1995-02-02",
+    "email": "aa@.pl",
+    "active": true,
+    "gender": "MALE",
+    "roleDTO": {
+      "id": null,
+      "name": "ROLE_ADMIN"
+      }
+  },
+  {
+    "id": null,
+    "name": "OLA",
+    "surname": "WALC",
+    "userName": "ow",
+    "password": "ow",
+    "birthday": "1990-02-02",
+    "email": "ow@.pl",
+    "active": true,
+    "gender": "FEMALE",
+    "roleDTO": {
+      "id": null,
+      "name": "ROLE_USER"
+      }
+  },
+  {
+    "id": null,
+    "name": "WOJTEK",
+    "surname": "NOWAK",
+    "userName": "wn",
+    "password": "wn",
+    "birthday": "1986-11-11",
+    "email": "wn@.pl",
+    "active": true,
+    "gender": "MALE",
+    "roleDTO": {
+      "id": null,
+      "name": "ROLE_USER"
+      }
+  }
+]
+
