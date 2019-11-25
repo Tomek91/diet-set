@@ -25,7 +25,7 @@ public class SpooncacularService {
 
     private final RestTemplate restTemplate;
 
-    @Value("apiKey")
+    @Value("${apiKey}")
     private String apiKey;
 
 
@@ -37,7 +37,7 @@ public class SpooncacularService {
                 .reduce("apiKey=" + apiKey, (a, b) -> String.join("&", a, b));
     }
 
-    //https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=4&apiKey=0291e78337b24cd2aa1114d27a14c6dc&minCalories=400&maxCalories=550&minCarbs=0&minProtein=0&minFat=0
+    //https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=4&apiKey=*****************&minCalories=400&maxCalories=550&minCarbs=0&minProtein=0&minFat=0
     public MealByParameters findRecipeByParameters(CaloricDemand caloricDemand, UserMealParameter userMealParameter) {
 
         Integer mealNumber = 5;
@@ -69,7 +69,7 @@ public class SpooncacularService {
 
         String generatedParams = generateParams(paramsMap);
         ResponseEntity<MealByParameters> responseEntity
-                = restTemplate.exchange(CommunicationConfig.BASE_URL + "complexSearch?query=" + generatedParams,
+                = restTemplate.exchange(CommunicationConfig.BASE_URL + "complexSearch?" + generatedParams,
                 HttpMethod.GET,
                 null,
                 MealByParameters.class
@@ -92,10 +92,12 @@ public class SpooncacularService {
                 .collect(Collectors.joining(","));
     }
 
+    //https://api.spoonacular.com/recipes/mealplans/generate?apiKey=***************&targetCalories=1119&timeFrame=day
     public MealPlanGenerated findMealPlan(CaloricDemand caloricDemand) {
 
         Map<String, String> paramsMap = new HashMap<>();
         paramsMap.put("targetCalories", caloricDemand.getDietValue().toString());
+        paramsMap.put("timeFrame", "day");
 
         String generatedParams = generateParams(paramsMap);
         ResponseEntity<MealPlanGenerated> responseEntity
