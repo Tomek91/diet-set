@@ -32,8 +32,7 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationE
         String token = UUID.randomUUID().toString();
         registrationService.createVerificationToken(user, token);
 
-       // String recipientAddress = user.getEmail();
-        String recipientAddress = "tomek.r9@wp.pl";
+        String recipientAddress = user.getEmail();
         String subject = "PHONES-APP: registration confirmation";
         String url = data.getUrl() + "registration/registerConfirmation?token=" + token;
 
