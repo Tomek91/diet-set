@@ -23,7 +23,6 @@ public class UserMealParameterController {
     public ResponseEntity<ResponseMessage<UserMealParameterDTO>> findOneUserMealParameter(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<UserMealParameterDTO>builder().data(userMealParameterService.findOneUserMealParameter(id)).build());
     }
 
@@ -31,7 +30,6 @@ public class UserMealParameterController {
     public ResponseEntity<ResponseMessage<UserMealParameterDTO>> addUserMealParameter(@Valid @RequestBody UserMealParameterDTO userMealParameterDTO) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .headers(null)
                 .body(ResponseMessage.<UserMealParameterDTO>builder().data(userMealParameterService.addUserMealParameter(userMealParameterDTO, authenticationFacade.getLoggedUser())).build());
     }
 
@@ -40,7 +38,6 @@ public class UserMealParameterController {
                                                                                  @Valid @RequestBody UserMealParameterDTO userMealParameterDTO) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<UserMealParameterDTO>builder().data(userMealParameterService.updateUserMealParameter(id, userMealParameterDTO)).build());
     }
 
@@ -48,7 +45,6 @@ public class UserMealParameterController {
     public ResponseEntity<ResponseMessage<UserMealParameterDTO>> deleteUserMealParameter(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<UserMealParameterDTO>builder().data(userMealParameterService.deleteUserMealParameter(id)).build());
     }
 }

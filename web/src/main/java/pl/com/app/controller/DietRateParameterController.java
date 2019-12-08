@@ -22,7 +22,6 @@ public class DietRateParameterController {
     public ResponseEntity<ResponseMessage<DietRateParameterDTO>> findOneDietRateParameter(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<DietRateParameterDTO>builder().data(dietRateParameterService.findOneDietRateParameter(id)).build());
     }
 
@@ -31,7 +30,6 @@ public class DietRateParameterController {
     public ResponseEntity<ResponseMessage<DietRateParameterDTO>> addDietRateParameter(@Valid @RequestBody DietRateParameterDTO dietRateParameterDTO) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .headers(null)
                 .body(ResponseMessage.<DietRateParameterDTO>builder().data(dietRateParameterService.addDietRateParameter(dietRateParameterDTO)).build());
     }
 
@@ -41,7 +39,6 @@ public class DietRateParameterController {
                                                                                      @Valid @RequestBody DietRateParameterDTO dietRateParameterDTO) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<DietRateParameterDTO>builder().data(dietRateParameterService.updateDietRateParameter(id, dietRateParameterDTO)).build());
     }
 
@@ -50,7 +47,6 @@ public class DietRateParameterController {
     public ResponseEntity<ResponseMessage<DietRateParameterDTO>> deleteDietRateParameter(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<DietRateParameterDTO>builder().data(dietRateParameterService.deleteDietRateParameter(id)).build());
     }
 }

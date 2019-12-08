@@ -26,7 +26,6 @@ public class RecipeByParameterController {
     public ResponseEntity<ResponseMessage<Set<RecipeByParameterDTO>>> findUserRecipes() {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<Set<RecipeByParameterDTO>>builder().data(recipeByParameterService.findUserRecipes(authenticationFacade.getLoggedUser())).build());
     }
 
@@ -34,7 +33,6 @@ public class RecipeByParameterController {
     public ResponseEntity<ResponseMessage<Set<RecipeByParameterDTO>>> addUserRecipes() {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .headers(null)
                 .body(ResponseMessage.<Set<RecipeByParameterDTO>>builder().data(recipeByParameterService.addUserRecipes(authenticationFacade.getLoggedUser())).build());
     }
 
@@ -42,7 +40,6 @@ public class RecipeByParameterController {
     public ResponseEntity<ResponseMessage<Set<RecipeByParameterDTO>>> deleteAllUserRecipes() {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<Set<RecipeByParameterDTO>>builder().data(recipeByParameterService.deleteAllUserRecipes(authenticationFacade.getLoggedUser())).build());
     }
 }

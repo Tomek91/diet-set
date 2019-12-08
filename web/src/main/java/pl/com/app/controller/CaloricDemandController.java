@@ -23,7 +23,6 @@ public class CaloricDemandController {
     public ResponseEntity<ResponseMessage<CaloricDemandDTO>> findOneCaloricDemand(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<CaloricDemandDTO>builder().data(caloricDemandService.findOneCaloricDemand(id)).build());
     }
 
@@ -31,7 +30,6 @@ public class CaloricDemandController {
     public ResponseEntity<ResponseMessage<CaloricDemandDTO>> addCaloricDemand(@Valid @RequestBody CaloricDemandDTO caloricDemandDTO) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .headers(null)
                 .body(ResponseMessage.<CaloricDemandDTO>builder().data(caloricDemandService.addCaloricDemand(caloricDemandDTO, authenticationFacade.getLoggedUser())).build());
     }
 
@@ -40,7 +38,6 @@ public class CaloricDemandController {
                                                                                  @Valid @RequestBody CaloricDemandDTO caloricDemandDTO) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<CaloricDemandDTO>builder().data(caloricDemandService.updateCaloricDemand(id, caloricDemandDTO)).build());
     }
 
@@ -48,7 +45,6 @@ public class CaloricDemandController {
     public ResponseEntity<ResponseMessage<CaloricDemandDTO>> deleteCaloricDemand(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<CaloricDemandDTO>builder().data(caloricDemandService.deleteCaloricDemand(id)).build());
     }
 }

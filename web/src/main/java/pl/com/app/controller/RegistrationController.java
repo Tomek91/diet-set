@@ -52,14 +52,12 @@ public class RegistrationController {
 
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .headers(null)
                     .body(ResponseMessage.<InfoDTO>builder().data( InfoDTO.builder().info("add user validation errors: " + errors).build()).build());
 
         }
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<InfoDTO>builder().data(registrationService.registerNewUser(userDTO, request)).build());
     }
 
@@ -69,7 +67,6 @@ public class RegistrationController {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<InfoDTO>builder().data(registrationService.confirmRegistration(token)).build());
     }
 }

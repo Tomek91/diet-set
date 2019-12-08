@@ -25,7 +25,6 @@ public class MealPlanController {
     public ResponseEntity<ResponseMessage<MealPlanDTO>> findOneMealPlan(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<MealPlanDTO>builder().data(mealPlanService.findOneMealPlan(id)).build());
     }
 
@@ -33,7 +32,6 @@ public class MealPlanController {
     public ResponseEntity<ResponseMessage<MealPlanDTO>> addMealPlan() {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .headers(null)
                 .body(ResponseMessage.<MealPlanDTO>builder().data(mealPlanService.addMealPlan(authenticationFacade.getLoggedUser())).build());
     }
 
@@ -41,7 +39,6 @@ public class MealPlanController {
     public ResponseEntity<ResponseMessage<MealPlanDTO>> deleteMealPlan(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .headers(null)
                 .body(ResponseMessage.<MealPlanDTO>builder().data(mealPlanService.deleteMealPlan(id)).build());
     }
 }
