@@ -19,7 +19,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    private final VerificationTokenRepository verificationTokenRepository;
     private final UserMapper userMapper;
 
     public Optional<UserDTO> findByUserName(String userName) {
