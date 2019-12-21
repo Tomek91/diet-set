@@ -18,7 +18,6 @@ import pl.com.app.model.enums.Gender;
 import pl.com.app.repository.UserRepository;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Optional;
 
 @ExtendWith(SpringExtension.class)

@@ -33,18 +33,23 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
-    @BeforeEach
-    public void init(){
+//    @BeforeEach
+//    public void init(){
+//        var p1 = User.builder().name("A").surname("AA").userName("a").password("aa").email("mail@test.pl").birthday(LocalDate.now()).gender(Gender.MALE).build();
+//        var p2 = User.builder().name("B").surname("BB").userName("b").password("bb").email("mail2@test.pl").birthday(LocalDate.now()).gender(Gender.FEMALE).build();
+//        testEntityManager.persist(p1);
+//        testEntityManager.persist(p2);
+//        testEntityManager.flush();
+//    }
+
+    @Test
+    @DisplayName("add users test")
+    void test1() {
         var p1 = User.builder().name("A").surname("AA").userName("a").password("aa").email("mail@test.pl").birthday(LocalDate.now()).gender(Gender.MALE).build();
         var p2 = User.builder().name("B").surname("BB").userName("b").password("bb").email("mail2@test.pl").birthday(LocalDate.now()).gender(Gender.FEMALE).build();
         testEntityManager.persist(p1);
         testEntityManager.persist(p2);
         testEntityManager.flush();
-    }
-
-    @Test
-    @DisplayName("add users test")
-    void test1() {
         Assertions.assertEquals(2, userRepository.findAll().size());
     }
 
